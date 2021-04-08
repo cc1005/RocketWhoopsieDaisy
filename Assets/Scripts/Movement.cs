@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    [SerializeField] float thrustForceY = 100f;
+    [SerializeField] float thrustForceY = 1000f;
     Rigidbody myRigidbody;
     // Start is called before the first frame update
     void Start()
@@ -23,7 +23,7 @@ public class Movement : MonoBehaviour
     {
        if (Input.GetKey(KeyCode.Space))
        {
-           myRigidbody.AddForce(0f, thrustForceY * Time.deltaTime, 0f);
+           myRigidbody.AddRelativeForce(Vector3.up * thrustForceY * Time.deltaTime);
        }
     }
     

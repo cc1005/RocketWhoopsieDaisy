@@ -705,6 +705,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1051932809, guid: f33922d33ffced84d853a1935bb89d44, type: 3}
+      propertyPath: thrustForceY
+      value: 1000
+      objectReference: {fileID: 0}
     - target: {fileID: 6997818992767529654, guid: f33922d33ffced84d853a1935bb89d44, type: 3}
       propertyPath: m_RootOrder
       value: 2
