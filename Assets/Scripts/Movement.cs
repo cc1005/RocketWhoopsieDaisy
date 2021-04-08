@@ -15,14 +15,27 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ProcessInput();
+        ProcessThrust();
+        ProcessRotation();
     }
 
-    void ProcessInput()
+    void ProcessThrust()
     {
        if (Input.GetKey(KeyCode.Space))
        {
            myRigidbody.AddForce(0f, thrustForceY * Time.deltaTime, 0f);
+       }
+    }
+    
+    void ProcessRotation()
+    {
+       if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
+       {
+           Debug.Log("Rotate left!");
+       }
+       else if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
+       {
+           Debug.Log("Rotate right!");
        }
     }
 }
