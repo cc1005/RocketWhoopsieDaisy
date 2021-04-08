@@ -20,7 +20,6 @@ private void OnCollisionEnter(Collision other)
         if (other.gameObject.tag != "LaunchPad")
         {
             myRigidbodyCollider.constraints = RigidbodyConstraints.None;
-            Debug.Log("I should have no constraints");
             if (other.gameObject.tag == "Obstacle")
             {
                 otherRigidbodyCollider.useGravity = true;
