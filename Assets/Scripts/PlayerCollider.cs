@@ -17,13 +17,18 @@ private void OnCollisionEnter(Collision other)
     {
         otherRigidbodyCollider = other.gameObject.GetComponent<Rigidbody>();
 
-        if (other.gameObject.tag != "LaunchPad")
+        switch (other.gameObject.tag)
         {
-            myRigidbodyCollider.constraints = RigidbodyConstraints.None;
-            if (other.gameObject.tag == "Obstacle")
-            {
+            case "Environment":
+                myRigidbodyCollider.constraints = RigidbodyConstraints.None;
+                break;
+            case "Obstacle":
+                myRigidbodyCollider.constraints = RigidbodyConstraints.None;
                 otherRigidbodyCollider.useGravity = true;
-            }
+                break;
+            default:
+                Debug.Log("This is a default collision");
+                break;
         }
     }
 
